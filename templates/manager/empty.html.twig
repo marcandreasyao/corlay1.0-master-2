@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta name="description" content>
+		<meta name="keywords" content>
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+		<link rel="icon" type="image/x-icon" href="{{asset('client/img/logo/favicon0.ico')}}">
+		<link rel="stylesheet" href="{{asset('client/css/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/css/all-fontawesome.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/css/flaticon.css')}}">
+		<link rel="stylesheet" href="{{asset('client/css/animate.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/css/magnific-popup.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/css/owl.carousel.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/css/style.css?8090')}}">
+	</head>
+	<body>
+		<div class="preloader">
+			<div class="loader">
+				<div class="loader-box-1"></div>
+				<div class="loader-box-2"></div>
+			</div>
+		</div>
+
+
+		<main class="main"> 
+            {% block body %}{% endblock %}
+		</main>
+
+		<a href="#" id="scroll-top">
+			<i class="far fa-long-arrow-up"></i>
+		</a>
+		<script data-cfasync="false" src="../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+		<script src="{{asset('client/js/jquery-3.6.0.min.js')}}"></script>
+		<script src="{{asset('client/js/modernizr.min.js')}}"></script>
+		<script src="{{asset('client/js/bootstrap.bundle.min.js')}}"></script>
+		<script src="{{asset('client/js/imagesloaded.pkgd.min.js')}}"></script>
+		<script src="{{asset('client/js/jquery.magnific-popup.min.js')}}"></script>
+		<script src="{{asset('client/js/isotope.pkgd.min.js')}}"></script>
+		<script src="{{asset('client/js/jquery.appear.min.js')}}"></script>
+		<script src="{{asset('client/js/jquery.easing.min.js')}}"></script>
+		<script src="{{asset('client/js/owl.carousel.min.js')}}"></script>
+		<script src="{{asset('client/js/counter-up.js')}}"></script>
+		<script src="{{asset('client/js/wow.min.js')}}"></script>
+		<script src="{{asset('client/js/main.js')}}"></script>
+	</body>
+</html>

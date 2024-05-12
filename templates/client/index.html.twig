@@ -1,0 +1,657 @@
+{% extends "client/layout.html.twig" %}
+
+{% block title %}Accueil Corlay Côte D'Ivoire{% endblock %}
+
+{% block content %}
+<section data-bs-version="5.1" class="carousel slide cid-u9rpSHb5ty" data-interval="false" data-bs-interval="false"
+    id="slider1-3">
+    <div class="full-screen">
+        <div class="mbr-slider slide carousel" data-keyboard="false" data-bs-keyboard="false" data-ride="carousel"
+            data-bs-ride="carousel" data-interval="4000" data-bs-interval="4000" data-bs-pause="true" data-pause="true">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item slider-fullscreen-image active" data-bg-video-slide="false"
+                    style="background-image: url('{{ asset('client/images/2a500292924657.5e57df496b25f.jpg') }}');">
+                    <div class="container container-slide">
+                        <div class="image_wrapper">
+                            <div class="mbr-overlay" style="opacity: 0.7;"></div><img
+                                src="{{asset('client/images/2a500292924657.5e57df496b25f.jpg')}}" alt="" title="">
+                            <div class="carousel-caption justify-content-center">
+                                <div class="col-10 align-center">
+                                    <h2 class="mbr-fonts-style display-1">L'EXCELLENCE DANS LES<div>OPERATIONS
+                                            PÉTROLÈRES</div>
+                                    </h2>
+                                    <p class="lead mbr-text mbr-fonts-style display-7">Maîtriser l'Art de l'Innovation
+                                        et de la Durabilité dans le Secteur Pétrolier.</p>
+                                    <div class="mbr-section-btn" buttons="0"><a class="btn display-4 btn-primary"
+                                            href="produitsetservices.html"><span
+                                                class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont mbr-iconfont-btn"></span>Nos
+                                            Produits et Services</a> <a class="btn btn-white-outline display-4"
+                                            href="index.html#contacts-Siège-Corlay"><span
+                                                class="material material-call mbr-iconfont mbr-iconfont-btn"></span>Nous
+                                            contacter</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false"
+                    style="background-image: url('{{asset('client/images/image1.jpeg')}}');">
+                    <div class="container container-slide">
+                        <div class="image_wrapper">
+                            <div class="mbr-overlay" style="opacity: 0.7;"></div><img
+                                src="{{asset('client/images/image1.jpeg')}}" alt="" title="">
+                            <div class="carousel-caption justify-content-center">
+                                <div class="col-10 align-center">
+                                    <h2 class="mbr-fonts-style display-1">HORIZONS NOUVEAUX EN EXPLORATION PÉTROLIÈRE
+                                    </h2>
+                                    <p class="lead mbr-text mbr-fonts-style display-7">Allier Technologie Avancée et
+                                        Respect de l'Environnement.</p>
+                                    <div class="mbr-section-btn" buttons="0"><a class="btn btn-primary display-4"
+                                            href="produitsetservices.html#info3-1y"><span
+                                                class="map-icon map-icon-gas-station mbr-iconfont mbr-iconfont-btn"></span>Trouver
+                                            une Station</a> <a class="btn btn-white-outline display-4"
+                                            href="produitsetservices.html"><span
+                                                class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont mbr-iconfont-btn"></span>En
+                                            savoir Plus</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false"
+                    style="background-image: url('{{asset('client/images/wp6696526-gas-station-wallpapers.jpg')}}');">
+                    <div class="container container-slide">
+                        <div class="image_wrapper">
+                            <div class="mbr-overlay" style="opacity: 0.6;"></div><img
+                                src="{{asset('client/images/wp6696526-gas-station-wallpapers.jpg')}}" alt="" title="">
+                            <div class="carousel-caption justify-content-center">
+                                <div class="col-10 align-center">
+                                    <h2 class="mbr-fonts-style display-1">PIONNIERS DE L'ÉNERGIE DE DEMAIN</h2>
+                                    <p class="lead mbr-text mbr-fonts-style display-7">Réinventer le Secteur Pétrolier
+                                        avec des Solutions Durables</p>
+                                    <div class="mbr-section-btn" buttons="0"><a class="btn display-4 btn-primary"
+                                            href="produitsetservices.html#Cartes-Stations-Corlay"><span
+                                                class="map-icon map-icon-gas-station mbr-iconfont mbr-iconfont-btn"></span>Trouver
+                                            une Station</a> <a class="btn btn-white-outline display-4"
+                                            href="produitsetservices.html"><span
+                                                class="mobi-mbri mobi-mbri-setting-3 mbr-iconfont mbr-iconfont-btn"></span>Nos
+                                            Produits et Services</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item slider-fullscreen-image" data-bg-video-slide="false"
+                    style="background-image: url('{{asset('client/images/airplane-plane-sunshine-sunset-0608dea7492ed552ed5298d3f4e7630e.jpg')}}');">
+                    <div class="container container-slide">
+                        <div class="image_wrapper">
+                            <div class="mbr-overlay" style="opacity: 0.6;"></div><img
+                                src="{{asset('client/images/airplane-plane-sunshine-sunset-0608dea7492ed552ed5298d3f4e7630e.jpg')}}"
+                                alt="" title="">
+                            <div class="carousel-caption justify-content-center">
+                                <div class="col-10 align-center">
+                                    <h2 class="mbr-fonts-style display-1">Vers un Avenir Plus Vert dans l'Industrie
+                                        Pétrolière</h2>
+                                    <p class="lead mbr-text mbr-fonts-style display-7">Engagement et Innovation pour une
+                                        Exploitation Responsable</p>
+                                    <div class="mbr-section-btn" buttons="0"><a class="btn display-4 btn-primary"
+                                            href="produitsetservices.html"><span
+                                                class="mobi-mbri mobi-mbri-arrow-next mbr-iconfont mbr-iconfont-btn"></span>En
+                                            savoir plus</a> <a class="btn btn-white-outline display-4"
+                                            href="contact.html"><span
+                                                class="material material-people mbr-iconfont mbr-iconfont-btn"></span>Nous
+                                            contacter</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><a data-app-prevent-settings="" class="carousel-control carousel-control-prev" role="button"
+                data-slide="prev" data-bs-slide="prev" href="#slider1-3"><span aria-hidden="true"
+                    class="mbri-left mbr-iconfont"></span><span class="sr-only visually-hidden">Previous</span></a><a
+                data-app-prevent-settings="" class="carousel-control carousel-control-next" role="button"
+                data-slide="next" data-bs-slide="next" href="#slider1-3"><span aria-hidden="true"
+                    class="mbri-right mbr-iconfont"></span><span class="sr-only visually-hidden">Next</span></a>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="counters1 counters cid-u9rPC9LXc8" id="counters1-4">
+    <div class="container">
+
+        <h3 class="mbr-section-subtitle mbr-fonts-style display-5">À propos de nos Chiffres</h3>
+
+        <div class="container pt-4 mt-2">
+            <div class="media-container-row">
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                    <div class="panel-item">
+                        <div class="card-img pb-3">
+                            <span class="mbr-iconfont map-icon map-icon-gas-station"
+                                style="color: rgb(254, 80, 0); fill: rgb(254, 80, 0);"></span>
+                        </div>
+
+                        <div class="card-text">
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                875</h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">F CFA le Super</h4>
+                            <p class="mbr-content-text mbr-fonts-style display-7">
+                                Un réseau de stations services sur l'étendue du territoire national.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                    <div class="panel-item">
+                        <div class="card-img pb-3">
+                            <span class="mbr-iconfont map-icon map-icon-gas-station"
+                                style="color: rgb(254, 80, 0); fill: rgb(254, 80, 0);"></span>
+                        </div>
+                        <div class="card-text">
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                745</h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">F CFA le Gasoil</h4>
+                            <p class="mbr-content-text mbr-fonts-style display-7">Un service clients pour répondre
+                                efficacement aux besoins spécifiques.<br></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                    <div class="panel-item">
+                        <div class="card-img pb-3">
+                            <span class="mbr-iconfont material material-ev-station"
+                                style="color: rgb(254, 80, 0); fill: rgb(254, 80, 0);"></span>
+                        </div>
+                        <div class="card-text">
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                60</h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Stations</h4>
+                            <p class="mbr-content-text mbr-fonts-style display-7">Un réseau de stations services sur
+                                l'étendue du territoire national.<br></p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card p-3 align-center col-12 col-md-6 col-lg-3">
+                    <div class="panel-item">
+                        <div class="card-img pb-3">
+                            <span class="mbr-iconfont material material-people"
+                                style="color: rgb(254, 80, 0); fill: rgb(254, 80, 0);"></span>
+                        </div>
+
+                        <div class="card-texts">
+                            <h3 class="count pt-3 pb-3 mbr-fonts-style display-2">
+                                200</h3>
+                            <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Employés</h4>
+                            <p class="mbr-content-text mbr-fonts-style display-7">
+                                Nous sommes engagés à vous desservir des produits de qualité par des agents
+                                qualifiés.&nbsp;</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="counters4 counters cid-u9uLFCotin" id="counters4-7">
+
+    <div class="container pt-4 mt-2">
+        <h2 class="mbr-section-title pb-3 align-center mbr-fonts-style display-5">Pourquoi choisir Corlay ?</h2>
+        <h3 class="mbr-section-subtitle pb-5 align-center mbr-fonts-style display-7">Optez pour Corlay pour bénéficier
+            d'un réseau étendu de stations-service, garantissant un accès facile et rapide à une gamme complète de
+            produits pétroliers de haute qualité.</h3>
+        <div class="media-container-row">
+            <div class="media-block m-auto" style="width: 50%;">
+                <div class="mbr-figure">
+                    <img src="{{asset('client/images/2a500292924657.5e57df496b25f-1400x1077.jpg')}}" alt="">
+                </div>
+            </div>
+            <div class="cards-block">
+                <div class="cards-container">
+                    <div class="card px-3 align-left col-12">
+                        <div class="panel-item p-4 d-flex align-items-start">
+                            <div class="card-img pr-3">
+                                <h3 class="img-text d-flex align-items-center justify-content-center"><strong>
+                                        1
+                                    </strong></h3>
+                            </div>
+                            <div class="card-text">
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Couverture Nationale :
+                                    Votre Prochaine Station, Toujours à Proximité</h4>
+                                <p class="mbr-content-text mbr-fonts-style display-7">
+                                    Corlay Côte d'Ivoire met à votre disposition une soixantaine de stations-service
+                                    réparties sur l'ensemble du territoire</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card px-3 align-left col-12">
+                        <div class="panel-item p-4 d-flex align-items-start">
+                            <div class="card-img pr-3">
+                                <h3 class="img-text d-flex align-items-center justify-content-center"><strong>
+                                        2
+                                    </strong></h3>
+                            </div>
+                            <div class="card-text">
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Excellence Lubrifiante
+                                    : Notre Gamme Premium</h4>
+                                <p class="mbr-content-text mbr-fonts-style display-7">Une gamme complète de produits de
+                                    haute qualité élaborée pour répondre à tous vos besoins en matière de
+                                    lubrification.<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card px-3 align-left col-12">
+                        <div class="panel-item p-4 d-flex align-items-start">
+                            <div class="card-img pr-3">
+                                <h3 class="img-text d-flex align-items-center justify-content-center"><strong>
+                                        3
+                                    </strong></h3>
+                            </div>
+                            <div class="card-text">
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Simplicité et
+                                    Accessibilité : La Carte Corlay</h4>
+                                <p class="mbr-content-text mbr-fonts-style display-7">La carte de paiement Corlay vous
+                                    facilite la vie et vous permet d'avoir accès à l'ensemble de nos produits et
+                                    services.<br></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card px-3 align-left col-12">
+                        <div class="panel-item p-4 d-flex align-items-start">
+                            <div class="card-img pr-3">
+                                <h3 class="img-text d-flex align-items-center justify-content-center"><strong>
+                                        4
+                                    </strong></h3>
+                            </div>
+                            <div class="card-texts">
+                                <h4 class="mbr-content-title mbr-bold mbr-fonts-style display-7">Innovation Énergétique
+                                    : L'Avenir du Gaz Butane</h4>
+                                <p class="mbr-content-text mbr-fonts-style display-7">
+                                    Corlay Côte d'Ivoire se lance résolument dans la distribution et la
+                                    commercialisation du gaz butane sur le marché national.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="features11 cid-u9rY9STXW3" id="features11-6">
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="media-container-row">
+                <div class="mbr-figure m-auto" style="width: 50%;">
+                    <img src="{{asset('client/images/305966279-535192738407027-4064051145580808331-n-932x1080.jpg')}}"
+                        alt="Image Corlay" title="">
+                </div>
+                <div class=" align-left aside-content">
+                    <h2 class="mbr-title pt-2 mbr-fonts-style display-5">Nous sommes Corlay</h2>
+                    <div class="mbr-section-text">
+                        <p class="mbr-text mb-5 pt-3 mbr-light mbr-fonts-style display-7">Une Entreprise spécialisée
+                            dans la commercialisation et la distribution de produits pétroliers et dérivés, Corlay Côte
+                            d’Ivoire met à la disposition de sa clientèle, des décennies de savoir-faire à travers sa
+                            riche histoire et des infrastructures à la pointe des technologies modernes pour des
+                            produits et des services d’une qualité irréprochable.
+                        </p>
+                    </div>
+
+                    <div class="block-content">
+                        <div class="card p-3 pr-3">
+                            <div class="media">
+                                <div class=" align-self-center card-img pb-3">
+                                    <span class="mbr-iconfont material material-filter-1"
+                                        style="font-size: 50px; color: rgb(254, 80, 0); fill: rgb(254, 80, 0);"></span>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="card-title mbr-fonts-style display-7">Acteur Majeur en Distribution
+                                        Pétrolière</h4>
+                                </div>
+                            </div>
+
+                            <div class="card-box">
+                                <p class="block-text mbr-fonts-style display-7">Etre un acteur majeur du développement
+                                    économique du secteur de la distribution pétrolière en Côte d'Ivoire par notre
+                                    professionnalisme et par la qualité de nos produits et services. <br><strong><a
+                                            href="#" class="text-primary">En Savoir Plus &gt;</a></strong><br></p>
+                            </div>
+                        </div>
+
+                        <div class="card p-3 pr-3">
+                            <div class="media">
+                                <div class="align-self-center card-img pb-3">
+                                    <span class="mbr-iconfont material material-filter-2"
+                                        style="font-size: 50px; color: rgb(254, 80, 0); fill: rgb(254, 80, 0);"></span>
+                                </div>
+                                <div class="media-body">
+                                    <h4 class="card-title mbr-fonts-style display-7">Satisfaction Consommateurs/Services
+                                        Étendus</h4>
+                                </div>
+                            </div>
+
+                            <div class="card-box">
+                                <p class="block-text mbr-fonts-style display-7">Satisfaire nos consommateurs en mettant
+                                    à leur disposition :<br>&nbsp;• Un réseau de stations services sur l'étendue du
+                                    territoire national<br>&nbsp;• Un service clients pour répondre efficacement aux
+                                    besoins spécifiques exprimés<br>&nbsp;• Une branche gaz en pleine
+                                    expansion<br>&nbsp;• Un personnel compétent et qualifié<br><strong><a href="#"
+                                            class="text-primary">En Savoir Plus &gt;</a></strong></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="contacts2 cid-u9wAxkR009" id="contacts-Siège-Corlay">
+    <!---->
+    <div class="container-fluid">
+        <div class="mbr-section-head">
+            <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-5">
+                <strong>Contacts et Siège Général</strong>
+            </h3>
+
+        </div>
+        <div class="row justify-content-center mt-4">
+            <div class="card col-12 col-md-6">
+                <div class="card-wrapper">
+                    <div class="image-wrapper">
+                        <span class="mbr-iconfont ti-headphone-alt"></span>
+                    </div>
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                            <strong>Téléphone</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <a href="tel:+2252721211515" class="text-primary">+225&nbsp;27 21 21 15 15</a>&nbsp;<br> <a
+                                href="tel:+2252721211616" class="text-primary">+225 27 21 21 16 16</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-md-6">
+                <div class="card-wrapper">
+                    <div class="image-wrapper">
+                        <span class="mbr-iconfont socicon-mail socicon"></span>
+                    </div>
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                            <strong>Email</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-7">
+                            <a href="mailto:infos@corlay.ci" class="text-primary">infos@corlay.ci</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-md-6">
+                <div class="card-wrapper">
+                    <div class="image-wrapper">
+                        <span class="mbr-iconfont map-icon map-icon-postal-code-prefix"></span>
+                    </div>
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                            <strong>Adresse</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-4">01 BP 1782 ABIDJAN 01 - PORT-BOUET ZONE
+                            INDUSTRIELLE VRIDI 1 BOULEVARD DU CANAL.<br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="card col-12 col-md-6">
+                <div class="card-wrapper">
+                    <div class="image-wrapper">
+                        <span class="mbr-iconfont wi-time-4 wi wi-fw"></span>
+                    </div>
+                    <div class="text-wrapper">
+                        <h6 class="card-title mbr-fonts-style mb-1 display-5">
+                            <strong>Horaires</strong>
+                        </h6>
+                        <p class="mbr-text mbr-fonts-style display-4">8:00 - 16:30</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section data-bs-version="5.1" class="map1 cid-u9wAghdu6v" id="map1-8">
+
+    <div class="google-map"><iframe frameborder="0" style="border:0"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127127.66999687042!2d-4.071242213862152!3d5.303256862362239!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfc1e91be2978679%3A0x6b7784adef618a!2sCORLAY!5e0!3m2!1sen!2sci!4v1712738520719!5m2!1sen!2sci"
+            allowfullscreen=""></iframe></div>
+</section>
+
+<section data-bs-version="5.1" class="_customHTML cid-T60nY2oKuo" id="design-block-T60nY2oKuo">
+
+    <div class="progress-container" id="myHeader">
+        <div class="progress-bar" id="myBar"></div>
+    </div>
+
+    <script type="text/javascript">
+        window.onscroll = function () { myFunction() };
+        var header = document.getElementById("myHeader");
+        // Get the offset position of the navbar
+        var sticky = header.offsetTop;
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+
+            if (window.pageYOffset > sticky) {
+                header.classList.add("sticky2");
+            } else {
+                header.classList.remove("sticky2");
+            }
+        }
+    </script>
+
+    <div style="padding:1rem; background-color:#c1c1c1;" class="hidden"></div>
+</section>
+
+<section data-bs-version="5.1" class="footer7 cid-7pMHQk5CQJ" once="footers" id="design-block-7pMHQk5CQJ">
+
+    <div class="media-container-row mbr-white">
+        <div class="media-container-row align-center">
+            <div class="row justify-content-center">
+                <div class="mbr-text mb-0 mbr-fonts-style align-center display-4">
+                    <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-4">
+                        <a href="terms.html" target="_blank" class="text-primary">Terms of Business</a>&nbsp;|&nbsp;<a
+                            href="policy.html" target="_blank" class="text-primary">Privacy Policy</a>&nbsp;|&nbsp;<a
+                            href="cookie_policy.html" target="_blank" class="text-primary">Cookie Policy</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="media-container-row align-center mbr-white">
+            <div class="row justify-content-center mbr-white">
+                <p class="mbr-text mb-0 mbr-fonts-style mbr-white align-center display-4">@
+                    <script language="JavaScript">
+    <!-
+    today=new Date();
+    y0=today.getFullYear();
+                    </script>
+    Copyright -&nbsp;<script language="JavaScript">
+    <!--- Hide from old browsers
+    document.write(y0);
+    </script>&nbsp;Corlay Côte D'Ivoire 1.2.7<br>Tous droits réservés</p>
+        
+        
+    
+    </div>
+    </div>
+    </div>
+    </section>
+
+<section data-bs-version="5.1" class="_customHTML cid-u9Y5KKHOKV" id="design-block-30">
+ 
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+    new google.translate.TranslateElement({pageLanguage: 'fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE, autoDisplay: false, multilanguagePage: true}, 'google_translate_element');
+    }
+</script>
+
+    <script type="text/javascript">
+        var toolBar = document.getElementsByClassName('goog-te-banner-frame skiptranslate')[0];
+        if(toolBar !== undefined) {
+        toolBar.style.display  = 'none';
+        document.body.style.top = '0px';
+        }
+    </script>
+
+
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" type="text/javascript"></script>
+
+<style>
+.nav-right {
+  float: left !important;
+  position: relative;
+}
+
+#google_translate_element {
+  display: none;
+}
+
+.goog-te-banner {
+  display: none;
+}
+
+.2.container {
+  display: none;
+}
+
+.skiptranslate {
+  display: none;
+  bottom: 0px;
+  position: relative;
+}
+
+.goog-te-spinner-pos {
+  display: none !important;
+}
+
+.goog-logo-link{display: none !important;}
+.goog-te-gadget{height: 28px !important;  overflow: hidden;}
+
+.goog-te-banner-frame.skiptranslate {display: none !important;} 
+body { top: 0px !important; }
+
+
+body {
+body{ top: 0 !important;}
+.goog-te-banner-frame{display: none !important;}
+}
+
+.goog-tooltip {
+    display: none !important;
+}
+.goog-tooltip:hover {
+    display: none !important;
+}
+.goog-text-highlight {
+    background-color: transparent !important;
+    border: none !important; 
+    box-shadow: none !important;
+}
+
+#goog-gt-tt, .goog-te-balloon-frame{display: none !important;} 
+
+
+
+</style>
+
+<div class="icon-bar">
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(en)';location.reload();" title="English" class="flag">
+    <i class="flag-icon-gb flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(fr)';location.reload();" title="Français" class="flag">
+    <i class="flag-icon-bl flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(nl)';location.reload();" title="Nederlands" class="flag">
+    <i class="flag-icon-nl flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(de)';location.reload();" title="Deutsch" class="flag">
+    <i class="flag-icon-de flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(es)';location.reload();" title="Español" class="flag">
+    <i class="flag-icon-es flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(pt)';location.reload();" title="Português" class="flag">
+    <i class="flag-icon-pt flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(it)';location.reload();" title="Italiano" class="flag">
+    <i class="flag-icon-it flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(el)';location.reload();" title="Ελληνικά" class="flag">
+    <i class="flag-icon-gr flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(ur)';location.reload();" title="اردو" class="flag">
+    <i class="flag-icon-pk flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(ru)';location.reload();" title="Русский" class="flag">
+    <i class="flag-icon-ru flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(zh-CN)';location.reload();" title="中文（简体）" class="flag">
+    <i class="flag-icon-cn flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(ja)';location.reload();" title="日本語" class="flag">
+    <i class="flag-icon-jp flag-icon"></i>
+  </a>
+  <a href="javascript:void()" onclick="window.location.hash='#googtrans(ko)';location.reload();" title="한국어" class="flag">
+    <i class="flag-icon-kr flag-icon"></i>
+  </a>
+</div>
+
+ <div style="padding:1rem; background: linear-gradient( #807e7f, #f1f1f1, #807e7f);" class="hidden">
+   <div class="align-center">
+              <h10> <br><br><br><br><br><br><div class="imgtest2"></div><br>Version 1.4.6<br>
+        Click the "gear" icon to change the layout of the flags bar. This text/logo will be removed on preview/publish.<br>You need the following extension for flags https://witsec.nl/extension-additional-icons.html#flag-icons<br><br><div class="imgtest"></div><br><br><br></h10>
+				
+    </div></div>
+</section>
+
+<section data-bs-version="5.1" class="_customHTML cid-uabc5jtSus" id="design-block-3l">
+      
+  <div class="whatapp">
+
+  <!--<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+                    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+                    <div class="floating-container notranslate">
+                        <div class="floating-button">
+                            <span class="my-float fab fa-rocketchat notranslate"></span>
+                        </div>
+                        <div class="element-container">
+                            <span class="float-element tooltip-left notranslate">
+                                <a href="tel:+2252721211515">
+                                    <i class="material-icons notranslate">call</i>
+                                </a>
+                            </span>
+                            <span class="float-element notranslate">
+                                <a href="mailto:infos@corlay.ci">
+                                    <i class="material-icons notranslate">mail</i>
+                                </a>
+                            </span>
+                            <span class="float-element notranslate">
+                                <a href="sms:+2252721211515">
+                                    <i class="material-icons notranslate">sms</i>
+                                </a>
+                            </span>
+                        </div>
+                    </div>
+
+            </div>
+</section>
+<section><a href="https://mobiri.se"></a><a href="https://mobiri.se"></a></section>
+{% endblock %}

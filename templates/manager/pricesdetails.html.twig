@@ -1,0 +1,95 @@
+{% extends 'manager/decoupe.html.twig' %}
+
+{% block title %}Corlay Admin - Coûts des produits {% endblock %}
+
+{% block active_menu_prices %}active bg-gradient-primary{% endblock %}
+
+{% block content %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Coûts des produits petroliers</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Consulter les prix d'une année particulière</h6>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container-fluid px-2" style="margin-top: 5em!important;">
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <div class="row">
+                <div class="col-lg-12 mt-4">
+                    <div class="ps-3">
+                        <h4 class="mb-1">Prix maximum (F CFA) Abidjan des produits petroliers au cours l'annee {{ year }}</h4>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="col-lg-6 mb-3" >
+                            <form action="{{ path('typedyear') }}" class="text-start" method="post">
+                                <div class="input-group input-group-outline" style="margin-bottom: 1rem!important;">
+                                    <label class="form-label">Année</label>
+                                    <input type="text" required name="customyear" class="form-control">
+                                </div>
+                                <div class="col-lg-3 col-sm-6 col-12">
+                                    <button class="btn bg-gradient-success mb-0 toast-btn" type="submit" data-target="successToast">Consulter</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="table-responsive p-0">
+                            {% for detail in details %}
+                                <h5 style="color: orange;">{{ detail.libelle }}</h5>
+                                <table class="table table-bordered">
+                                    <thead>
+                                    <tr class="text-center">
+                                        <th class="table-background">Super</th>
+                                        <th class="table-background">Gasoil</th>
+                                        <th class="table-background">Pétrole</th>
+                                        <th class="table-background">Fuel</th>
+                                        <th class="table-background">DDO</th>
+                                        <th class="table-background">DDO-AD</th>
+                                        <th class="table-background">Butane Vrac Industriel</th>
+                                        <th class="table-background">Bouteilles Conditionnées </th>
+                                        <th class="table-background">Bouteilles de 6 Kg</th>
+                                        <th class="table-background">Bouteilles de 12,5 Kg</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr class="text-center">
+                                        <td>{{ detail.super }}</td>
+                                        <td>{{ detail.gasoil }}</td>
+                                        <td>{{ detail.petrole }}</td>
+                                        <td>{{ detail.fuel }}</td>
+                                        <td>{{ detail.ddo }}</td>
+                                        <td>{{ detail.ddoad }}</td>
+                                        <td>{{ detail.butane }}</td>
+                                        <td>{{ detail.btc }}</td>
+                                        <td>{{ detail.bt6kg }}</td>
+                                        <td>{{ detail.bt12kg }}</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

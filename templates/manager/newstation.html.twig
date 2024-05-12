@@ -1,0 +1,88 @@
+{% extends "manager/decoupe.html.twig" %}
+
+{% block title %}Corlay manager - Stations{% endblock %}
+
+{% block active_menu_stations %}active bg-gradient-primary{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Stations-service</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Enregistrer une station</h6>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container-fluid px-2" style="margin-top: 5em!important;">
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <div class="row">
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <div class="ps-3" style="margin-bottom: 2em;">
+                            <h4 class="mb-1">Nouvelle Station Corlay</h4>
+                        </div>
+                        <form action="{{ path('savestation') }}" method="post">
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Nom de la station</label>
+                                <input type="text" class="form-control" required name="nom">
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Emplacement</label>
+                                <input type="text" required class="form-control" name="emplacement">
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Lien Google Maps</label>
+                                <input type="text" class="form-control" name="map">
+                            </div>
+                            <br><h5>Disponibilité des Produits</h5>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Butane 6Kg</label>
+                                <input type="text" class="form-control" name="bt6">
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Butane 12Kg</label>
+                                <input type="text" class="form-control" name="bt12">
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Lubrifiants Disponibles</label>
+                                <input type="text" class="form-control" name="lubs">
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                               <select class="form-select" aria-label="Default select example" name="boutique">
+                                   <option value="Non" selected>Boutique C-Shop ?</option>
+                                    <option value="Oui">Oui</option>
+                                    <option value="Non">Non</option>
+                                </select>
+                            </div>
+                            <div class="input-group input-group-outline mb-3">
+                                <label class="form-label">Contacts</label>
+                                <input type="text" class="form-control" name="contacts">
+                            </div>
+                            <button class="btn bg-gradient-success w-100 mb-0 toast-btn" type="submit" style="margin-top: 2em;" data-target="successToast">
+                                <i class="far fa-save"></i> Enregistrer
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "manager/decoupe.html.twig" %}
+
+ {%  block title %}Corlay manager - Lubrifiants{%  endblock %}
+
+ {% block active_menu_lubrifiants %}active bg-gradient-primary{% endblock %}
+
+{% block content %}
+ <!-- Navbar -->
+ <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+  <div class="container-fluid py-1 px-3">
+   <nav aria-label="breadcrumb">
+    <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+     <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+     <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Lubrifiants</li>
+    </ol>
+    <h6 class="font-weight-bolder mb-0">Gerer les lubrifiants Corlay</h6>
+   </nav>
+   <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+    <ul class="navbar-nav  justify-content-end">
+     <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+      <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+       <div class="sidenav-toggler-inner">
+        <i class="sidenav-toggler-line"></i>
+        <i class="sidenav-toggler-line"></i>
+        <i class="sidenav-toggler-line"></i>
+       </div>
+      </a>
+     </li>
+    </ul>
+   </div>
+  </div>
+ </nav>
+ <!-- End Navbar -->
+
+  <div class="card-header py-4 position-relative mt-n4 mx-3 z-index-2">
+   <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
+    <h6 class="text-white text-capitalize ps-3">
+     Liste des categories de lubrifiants
+    </h6>
+    <button class="btn bg-gradient-success mb-0 toast-btn float-end" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" style="margin-top: -39px; margin-right: 35px;">
+     <i class="fas fa-plus"></i>
+     Nouveau
+    </button>
+   </div>
+  </div>
+
+ <div class="container-fluid py-4">
+  <div class="row">
+   {% for item in lubris %}
+   <div class="col-md-6 col-lg-2 col-xs-6" style="padding-bottom:25px;">
+    <div class="card">
+     <div class="card-header mx-4 p-3 text-center">
+      <div class="icon icon-shape icon-lg bg-gradient-primary shadow text-center border-radius-lg">
+       <i class="fas fa-oil-can"></i>
+      </div>
+     </div>
+     <div class="card-body pt-0 p-3 text-center">
+      <h6 class="text-center mb-0">{{ item.lubname }}</h6>
+      <span class="text-xs">{{item.lubdescription|length > 60 ? item.lubdescription|slice(0, 55) ~ '...' : item.lubdescription}}</span>
+      <hr class="horizontal dark my-3">
+      <h5 class="mb-0">
+       <a class="btn bg-gradient-dark mb-0" href="{{ path('app_declinaisons',{'id':item.id}) }}">
+            <i class="fa fa-pencil"></i>
+       </a>
+       <a href="{{ path('app_category_delete',{'id':item.id}) }}" class="btn bg-gradient-danger mb-0 toast-btn" type="button">
+            <i class="fas fa-trash"></i>
+        </a>
+      </h5>
+     </div>
+    </div>
+   </div>
+   {% endfor %}
+  </div>
+ </div>
+
+ <!-- Modal -->
+ <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+   <div class="modal-content">
+    <div class="modal-header">
+     <h5 class="modal-title" id="exampleModalLabel">Creer une Categorie de Lubrifiant</h5>
+     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+     <form action="{{ path('app_category_save') }}" class="text-start" method="post" enctype="multipart/form-data">
+      <div class="input-group input-group-outline my-3">
+       <label class="form-label">Nom Categorie</label>
+       <input type="text" name="catname" class="form-control">
+      </div>
+      <div class="input-group input-group-outline my-3">
+       <label class="form-label">Description</label>
+       <input type="text" name="libdesc" class="form-control">
+      </div>
+      <div class="modal-footer">
+       <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+       <button type="submit" name="validate" class="btn btn-primary">Enregistrer </button>
+      </div>
+     </form>
+    </div>
+
+   </div>
+  </div>
+ </div>
+ <!-- Modal -->
+{% endblock %}

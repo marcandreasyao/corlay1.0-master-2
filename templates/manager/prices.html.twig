@@ -1,0 +1,115 @@
+{% extends 'manager/decoupe.html.twig' %}
+
+{% block title %}Corlay Admin - Coûts des produits {% endblock %}
+
+{% block active_menu_prices %}active bg-gradient-primary{% endblock %}
+
+{%  block content %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Coûts des produits petroliers</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Gérer les coûts des produits pétroliers vendus par Corlay Côte d'ivoire</h6>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container-fluid px-2" style="margin-top: 5em!important;">
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <div class="row">
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <div class="mb-5 ps-3">
+                            <h5 class="mb-1">Prix maximum (F CFA) Abidjan des produits petroliers de {{ prices.libelle }}</h5>
+                            <a href="{{ path('annee_details',{'annee':prices.annee}) }}" class="btn bg-gradient-success mb-0 toast-btn float-end" type="button" data-target="successToast" style="margin-top: -39px;">
+                                <i class="fas fa-eye"></i>
+                                Consulter
+                                <a/>
+                        </div>
+
+                        <form action="{{ path('price_save',{'id': prices.id}) }}" method="post">
+                            <div class="row">
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Super</label> &nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.super is defined %}{{ prices.super }}{% endif %}" class="form-control" name="super">
+                                </div>
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Gasoil</label>&nbsp;&nbsp;
+                                    <input type="number" value= "{%if prices.gasoil is defined %}{{ prices.gasoil }}{% endif %}" class="form-control" name="gasoil">
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top: 20px;">
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Pétrole</label> &nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.petrole is defined %}{{ prices.petrole }}{% endif %}" class="form-control" name="petrole">
+                                </div>
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">DDO</label>&nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.ddo is defined %}{{ prices.ddo }}{% endif %}" class="form-control" name="ddo">
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top: 20px;">
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">DDOAD</label> &nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.ddoad is defined %}{{ prices.ddoad }}{% endif %}" class="form-control" name="ddoad">
+                                </div>
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Butane</label>&nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.butane is defined %}{{ prices.butane }}{% endif %}" class="form-control" name="butane">
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top: 20px;">
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Bouteilles Conditionnées</label> &nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.btc is defined %}{{ prices.btc }}{% endif %}" class="form-control" name="btc">
+                                </div>
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Bouteille 6Kg</label>&nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.bt6kg is defined %}{{ prices.bt6kg }}{% endif %}" class="form-control" name="bt6">
+                                </div>
+                            </div>
+
+                            <div class="row" style="padding-top: 20px;">
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Bouteilles 12Kg</label> &nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.bt12kg is defined %}{{ prices.bt12kg }}{% endif %}" class="form-control" name="bt12">
+                                </div>
+                                <div class="col input-group input-group-outline">
+                                    <label class="col-form-label">Fuel</label>&nbsp;&nbsp;
+                                    <input type="number" value="{%if prices.fuel is defined %}{{ prices.fuel }}{% endif %}"class="form-control" name="fuel">
+                                </div>
+                            </div>
+                            <button class="btn bg-gradient-success w-100 mb-0 toast-btn" type="submit" style="margin-top: 2em;" data-target="successToast">
+                                <i class="far fa-save"></i> Enregistrer
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends "manager/decoupe.html.twig" %}
+
+{% block title %}Corlay - Administration{% endblock %}
+
+{% block active_menu_dashboard %}active bg-gradient-primary{% endblock %}
+
+{% block content %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Dashboard</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Dashboard</h6>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+    <div class="container-fluid py-4">
+        <div class="row">
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div class="icon icon-lg icon-shape bg-gradient-dark shadow-dark text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">weekend</i>
+                        </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">Articles</p>
+                            <h4 class="mb-0">{{ counter_article }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div class="icon icon-lg icon-shape bg-gradient-primary shadow-primary text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">person</i>
+                        </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">Albums Photo</p>
+                            <h4 class="mb-0">{{ counter_albums }}</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 mb-xl-0 mb-4">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div class="icon icon-lg icon-shape bg-gradient-success shadow-success text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">person</i>
+                        </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">Lubrifiants</p>
+                            <h4 class="mb-0">{{ counter_lubrifiants }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-sm-6">
+                <div class="card">
+                    <div class="card-header p-3 pt-2">
+                        <div class="icon icon-lg icon-shape bg-gradient-info shadow-info text-center border-radius-xl mt-n4 position-absolute">
+                            <i class="material-icons opacity-10">weekend</i>
+                        </div>
+                        <div class="text-end pt-1">
+                            <p class="text-sm mb-0 text-capitalize">Boutiques C-Shop</p>
+                            <h4 class="mb-0">{{ counter_boutique }}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-lg-7 col-md-6 mb-md-0 mb-4">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <div class="row">
+                            <div class="col-lg-6 col-7">
+                                <h6>Publications Récentes</h6>
+                            </div>
+                            <div class="col-lg-6 col-5 my-auto text-end">
+                                <div class="dropdown float-lg-end pe-4">
+                                    <a class="cursor-pointer" id="dropdownTable" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fa fa-ellipsis-v text-secondary"></i>
+                                    </a>
+                                    <ul class="dropdown-menu px-2 py-3 ms-sm-n4 ms-n5" aria-labelledby="dropdownTable">
+                                        <li><a class="dropdown-item border-radius-md" href="javascript:;">Action</a></li>
+                                        <li><a class="dropdown-item border-radius-md" href="javascript:;">Another action</a></li>
+                                        <li><a class="dropdown-item border-radius-md" href="javascript:;">Something else here</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body px-0 pb-2">
+                        <div class="table-responsive">
+                            <table class="table align-items-center mb-0">
+                                <thead>
+                                <tr>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Miniature et Titre</th>
+                                    <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Date de publication</th>
+                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in recents %}
+                                <tr>
+                                    <td>
+                                        <div class="d-flex px-2 py-1">
+                                            <div>
+                                                <img src="{{ asset(image ~ item.image) }}" class="avatar avatar-sm me-3" alt="atlassian">
+                                            </div>
+                                            <div class="d-flex flex-column justify-content-center">
+                                                <h6 class="mb-0 text-sm">{{item.title|length > 30 ? item.title|slice(0, 25) ~ '...' : item.title}}</h6>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <span class="text-xs font-weight-bold"> {{ item.date|date("d/m/Y") }} </span>
+                                    </td>
+                                    <td class="align-middle">
+                                        <a href="{{ path('edit_article', {'id': item.id }) }}" class="btn bg-gradient-info mb-0 toast-btn" type="button" data-target="infoToast">
+                                            <i class="fa fa-pencil"></i>
+                                        </a>
+                                        &nbsp;{% if (app.user.roles[0] == 'ROLE_ADMIN' or app.user.roles[0] =='ROLE_SUPER_ADMIN') %}
+                                        <a href="{{ path('app_article_delete', {'id': item.id}) }}" class="btn bg-gradient-danger mb-0 toast-btn" type="button" data-target="dangerToast">
+                                            <i class="fa fa-trash"></i>
+                                        </a>
+                                        {% endif %}
+
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-header pb-0 px-3">
+                        <h6 class="mb-0">Nos Boutiques</h6>
+                    </div>
+                    <div class="card-body pt-4 p-3">
+                        <ul class="list-group">
+                            {% for content in two_shops %}
+                            <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+                                <div class="d-flex flex-column">
+                                    <h6 class="mb-3 text-sm">{{ content.nom }}</h6>
+                                    <span class="mb-2 text-xs">{{ content.emplacement }}</span>
+                                    <span class="mb-2 text-xs">Ouvert de {{content.ouverture|date('H:i') }} à {{content.fermeture|date('H:i')}}</span>
+                                    <span class="text-xs">{{content.contacts}}</span>
+                                </div>
+                                <div class="ms-auto text-end">
+                                    {% if (app.user.roles[0] == 'ROLE_ADMIN' or app.user.roles[0] =='ROLE_SUPER_ADMIN') %}
+                                    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="{{ path('app_shop_delete',{'id':content.id}) }}"><i class="material-icons text-sm me-2">delete</i>Supprimer</a>
+                                    {% endif %}
+                                    <a class="btn btn-link text-dark px-3 mb-0" href="{{ path('edit_shop', {'id': content.id }) }}"><i class="material-icons text-sm me-2">edit</i>Modifier</a>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

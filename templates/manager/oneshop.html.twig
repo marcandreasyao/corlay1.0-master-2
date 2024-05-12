@@ -1,0 +1,126 @@
+{% extends 'manager/decoupe.html.twig' %}
+{% block title %}Corlay manager - Modifier Boutique {% endblock %}
+{% block active_menu_cshops %}active bg-gradient-primary{% endblock %}
+
+{% block content %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Editer Boutique</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Modifier les information d'une Boutique C-Shop</h6>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container-fluid px-2" style="margin-top: 5em!important;">
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <div class="row">
+                <div class="row">
+
+                    <div class="col-12 mt-4">
+                        <div class="ps-3">
+                            <h4 class="mb-1">Modification d'une boutique </h4>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <form action="{{ path('edit_shop_submit',{'id': shop.id }) }}" class="text-start" method="post" enctype="multipart/form-data">
+
+                                    <div class="input-group input-group-outline mb-3">
+                                        <div class="col-auto">
+                                            <label for="inputPassword6" class="col-form-label">Nom :</label>
+                                        </div>&nbsp;&nbsp;
+                                        <input type="text" name="nom" value="{% if shop.nom is defined %}{{ shop.nom }}{% endif %}" class="form-control" placeholder="Nom de la boutique">
+                                    </div>
+
+                                    <div class="input-group input-group-outline mb-3">
+                                        <div class="col-auto">
+                                            <label for="inputPassword6" class="col-form-label">Emplacement :</label>
+                                        </div>&nbsp;&nbsp;
+                                        <input type="text" name="location" value="{% if shop.emplacement is defined %}{{ shop.emplacement }}{% endif %}" class="form-control" placeholder="Emplacement">
+                                    </div>
+
+                                    <div class="input-group input-group-outline mb-3">
+                                        <div class="col-auto">
+                                            <label for="inputPassword6" class="col-form-label">Heure d'ouverture :</label>
+                                        </div>&nbsp;&nbsp;
+                                        <input type="time" name="ouvrir" value="{% if shop.ouverture is defined %}{{ shop.ouverture|date('H:i') }}{% endif %}" class="form-control" placeholder="Heure d'ouverture">
+                                    </div>
+
+                                    <div class="input-group input-group-outline mb-3">
+                                        <div class="col-auto">
+                                            <label for="inputPassword6" class="col-form-label">Heure de fermeture :</label>
+                                        </div>&nbsp;&nbsp;
+                                        <input type="time" name="fermer" value="{% if shop.fermeture is defined %}{{ shop.fermeture|date('H:i') }}{% endif %}" class="form-control" placeholder="Heure de fermeture">
+                                    </div>
+
+                                    <div class="input-group input-group-outline mb-3">
+                                        <div class="col-auto">
+                                            <label for="inputPassword6" class="col-form-label">Contacts :</label>
+                                        </div>&nbsp;&nbsp;
+                                        <input type="text" name="contacts" value="{% if shop.contacts is defined %}{{ shop.contacts }}{% endif %}" class="form-control" placeholder="Contacts">
+                                    </div>
+
+
+                                    <div class="input-group input-group-outline">
+                                        <input type="file" name="image" onchange="previewPicture(this)" accept="image/png, image/jpeg" class="form-control">
+                                    </div>
+                                    <p>Dimensions recommandées pour l'image 550 x 400 pixels</p>
+
+                                    <div class="text-center">
+                                        <button type="submit" name="validerShop" class="btn bg-gradient-primary w-100 my-4 mb-2">Enregistrer</button>
+                                    </div>
+
+                                </form>
+                            </div>
+                            <div class="col-lg-4">
+                                <h5>Aperçu de la boutique</h5>
+                                <p>
+                                    <img src="{{asset(shop_dir~shop.image)}}" id="image" class="img-fluid shadow border-radius-xl">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block addjs %}
+    <script type="text/javascript" >
+        // L'image img#image
+        var image = document.getElementById("image");
+
+        // La fonction previewPicture
+        var previewPicture  = function (e) {
+
+            // e.files contient un objet FileList
+            const [picture] = e.files
+
+            // "picture" est un objet File
+            if (picture) {
+                // On change l'URL de l'image
+                image.src = URL.createObjectURL(picture)
+            }
+        }
+    </script>
+{% endblock %}

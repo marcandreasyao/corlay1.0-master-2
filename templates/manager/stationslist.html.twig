@@ -1,0 +1,75 @@
+{% extends "manager/decoupe.html.twig" %}
+
+{% block title %}Corlay manager - Stations{% endblock %}
+
+{% block active_menu_stations %}active bg-gradient-primary{% endblock %}
+
+{% block content %}
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Utilisateurs</li>
+                </ol>
+                <h6 class="font-weight-bolder mb-0">Modifier un utilisateur</h6>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End Navbar -->
+
+    <div class="container-fluid px-2" style="margin-top: 5em!important;">
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <div class="row">
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <div class="mb-4 ps-3">
+                            <h5 class="mb-1">Stations-service Corlay</h5>
+                            <a href="{{ path('newstation') }}" class="btn bg-gradient-success mb-0 toast-btn float-end" type="button" data-target="successToast" style="margin-top: -39px;">
+                                <i class="fas fa-plus"></i>
+                                Nouveau
+                            </a>
+                        </div>
+                        <div class="row">
+                            {% for station in stations  %}
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="list-group-item border-0 d-flex align-items-center px-0 mb-2 pt-0">
+                                        <div class="avatar" style="color:black;">
+                                            <div class="text-center me-2 d-flex align-items-center justify-content-center">
+                                                <i class="fa fa-gas-pump" style="font-size: 30px;"></i>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex align-items-start flex-column justify-content-center">
+                                            <h5 class="mb-0" style="font-size: 18px; color: #bf311b">{{ station.nom }}</h5>
+                                            <p class="mb-0 text-xs">
+                                                <a href="{{ path('onestation',{'id':station.id}) }}">Modifier</a>
+                                                &nbsp;&nbsp;
+                                                {% if (app.user.roles[0] == 'ROLE_ADMIN' or app.user.roles[0] =='ROLE_SUPER_ADMIN') %}
+                                                    <a href="{{ path('stationdelete',{'id':station.id}) }}">Supprimer</a>
+                                                {% endif %}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

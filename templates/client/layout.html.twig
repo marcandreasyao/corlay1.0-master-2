@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %}{% endblock %}</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+		<link rel="shortcut icon" href="client/images/corlay-logo-rectangle-96x48.png" type="image/x-icon">
+		<meta name="description" content="">
+
+		<link rel="stylesheet" href="{{asset('client/weather-icons/css/weather-icons.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/flag-icons/css/flag-icon.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/font-awesome-brands/../css/fontawesome.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/font-awesome-brands/css/brands.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/map-icons/css/map-icons.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/material-design/css/material-icons.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/themify/css/themify-icons.css')}}">
+		<link rel="stylesheet" href="{{asset('client/web/assets/mobirise-icons2/mobirise2.css')}}">
+		<link rel="stylesheet" href="{{asset('client/web/assets/mobirise-icons/mobirise-icons.css')}}">
+		<link rel="stylesheet" href="{{asset('client/bootstrap/css/bootstrap.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/bootstrap/css/bootstrap-grid.min.css')}}">
+		<link rel="stylesheet" href="{{asset('client/bootstrap/css/bootstrap-reboot.min.css')}}">
+        {% block addcss %}{% endblock %}
+		<link rel="stylesheet" href="{{asset('client/dropdown/css/style.css')}}">
+		<link rel="stylesheet" href="{{asset('client/socicon/css/styles.css')}}">
+		<link rel="stylesheet" href="{{asset('client/theme/css/style.css')}}">
+		<link href="{{asset('client/fonts/style.css')}}" rel="stylesheet">
+		<link rel="preload" as="style" href="{{asset('client/mobirise/css/mbr-additional.css?v=X88WVe')}}"><link
+		rel="stylesheet" href="{{asset('client/mobirise/css/mbr-additional.css?v=XkuWVe')}}" type="text/css">
+
+
+		<!-- Meta tags for responsive design --><script src="assets/witsec-jquery-3.6.0/jquery-3.6.0.min.js"></script>  <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/parallax/jarallax.js"></script>  <script src="assets/web/assets/cookies-alert-plugin/cookies-alert-core.js"></script>  <script src="assets/web/assets/cookies-alert-plugin/cookies-alert-script.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/playervimeo/vimeo_player.js"></script>  <script src="assets/viewportchecker/viewportchecker.js"></script>  <script src="assets/mbr-clients-slider/mbr-clients-slider.js"></script>  <script src="assets/witsec-mailform/mailform.js"></script>  <script src="assets/theme/js/script.js"></script>  
+		<meta charset="UTF-8">
+		<meta
+		name="viewport" content="width=device-width, initial-scale=1.0">
+		<!-- Link to the Manifest -->
+		<link
+		rel="manifest" href="{{asset('client/manifest.json')}}">
+		<!-- Theme Color for Address Bar -->
+		<meta
+		name="theme-color" content="#fe5000">
+		<!-- Service Worker Registration -->
+        <script>
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', function () {
+                navigator.serviceWorker.register('{{ asset('client / service - worker.js') }}').then(function (registration) {
+                console.log('Service Worker registration successful with scope: ', registration.scope);
+            }, function (err) {
+                console.log('Service Worker registration failed: ', err);
+            });
+            });
+            }
+        </script>
+
+	</head>
+	<body>
+		<section data-bs-version="5.1" class="menu menu3 cid-u9rljGI1ck" once="menu" id="menu3-1">
+			<nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
+				<div class="container-fluid">
+					<div class="navbar-brand">
+						<span class="navbar-logo">
+
+							<a href="{{ path('app_main') }}"><img src="{{asset('client/images/corlay-logo-rectangle-96x48.png')}}" alt="Corlay.ci Logo transparent" style="height: 3rem;"></a>
+
+						</span>
+
+					</div>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbarSupportedContent" data-bs-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+						<div class="hamburger">
+							<span></span>
+							<span></span>
+							<span></span>
+							<span></span>
+						</div>
+					</button>
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
+						<ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+							<li class="nav-item">
+								<a class="nav-link link text-secondary text-primary display-4" href="{{ path('app_main') }}">Accueil</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link link text-secondary text-primary display-4" href="{{ path('app_produits_sercives') }}">Produits et Services</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link link text-secondary text-primary display-4" href="actualites.html">Actualités</a>
+							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link link dropdown-toggle text-secondary display-4" href="https://mobiri.se" data-toggle="dropdown-submenu" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">À Propos de</a>
+								<div class="dropdown-menu" aria-labelledby="dropdown-987">
+									<a class="dropdown-item text-secondary text-primary display-4" href="{{ path('app_about') }}">Corlay</a>
+									<a class="dropdown-item text-secondary text-primary display-4" href="{{ path('app_politiquequalite') }}">La Politique Qualité</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link link text-secondary show text-primary display-4" href="{{ path('app_contact') }}">Contact</a>
+							</li>
+						</ul>
+						<div class="icons-menu">
+							<a class="iconfont-wrapper" href="https://www.facebook.com/corlaycotedivoire/?locale=fr_FR" target="_blank">
+								<span class="p-2 mbr-iconfont socicon-facebook socicon" style="color: rgb(66, 103, 178); fill: rgb(66, 103, 178);"></span>
+							</a>
+							<a class="iconfont-wrapper" href="https://corlayci.mobirisesite.com/page1.html#" target="_blank">
+								<span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
+							</a>
+							<a class="iconfont-wrapper" href="https://www.instagram.com/explore/locations/363271253800308/corlay-cote-divoire/?next=%2Fwhitestorear%2Ftagged%2F" target="_blank">
+								<span class="p-2 mbr-iconfont socicon-instagram socicon" style="color: rgb(225, 48, 108); fill: rgb(225, 48, 108);"></span>
+							</a>
+							<a class="iconfont-wrapper" href="https://www.linkedin.com/company/corlay-c-te-d'ivoire/?originalSubdomain=ci" target="_blank">
+								<span class="p-2 mbr-iconfont socicon-linkedin socicon" style="color: rgb(0, 119, 181); fill: rgb(0, 119, 181);"></span>
+							</a>
+						</div>
+
+					</div>
+				</div>
+			</nav>
+		</section>
+
+		{% block content %}{% endblock %}
+
+		<script src="{{asset('client/witsec-jquery-3.6.0/jquery-3.6.0.min.js')}}"></script>  
+        <script src="{{asset('client/bootstrap/js/bootstrap.bundle.min.js')}}"></script>  
+        <script src="{{asset('client/web/assets/cookies-alert-plugin/cookies-alert-core.js')}}"></script>
+        <script src="{{asset('client/web/assets/cookies-alert-plugin/cookies-alert-script.js')}}"></script>  
+        <script src="{{asset('client/smoothscroll/smooth-scroll.js')}}"></script>  
+        <script src="{{asset('client/ytplayer/index.js')}}"></script>  
+        {% block addjs %}{% endblock %}
+        <script src="{{asset('client/dropdown/js/navbar-dropdown.js')}}"></script>  
+        <script src="{{asset('client/vimeoplayer/player.js')}}"></script>  
+        <script src="{{asset('client/viewportchecker/viewportchecker.js')}}"></script>  
+        <script src="{{asset('client/theme/js/script.js')}}"></script>  
+        <script src="{{asset('client/slidervideo/script.js')}}"></script>  
+
+		<input name="cookieData" type="hidden" data-cookie-cookiesAlertType='false' data-cookie-customDialogSelector='null' data-cookie-colorText='#424a4d' data-cookie-colorBg='rgb(255, 255, 255)' data-cookie-opacityOverlay='0' data-cookie-bgOpacity='100' data-cookie-textButton='Accepter' data-cookie-rejectText='REJECT' data-cookie-colorButton='#fe5000' data-cookie-rejectColor='#ffffff' data-cookie-colorLink='#424a4d' data-cookie-underlineLink='true' data-cookie-text="Nous utilisons des cookies pour vous offrir la meilleure expérience. Lisez notre <a href='privacy.html'>politique de cookies</a>.">
+        <div id="scrollToTop" class="scrollToTop mbr-arrow-up"><a style="text-align: center;"><i class="mbr-arrow-up-icon mbr-arrow-up-icon-cm cm-icon cm-icon-smallarrow-up"></i></a></div>
+
+	</body>
+</html>

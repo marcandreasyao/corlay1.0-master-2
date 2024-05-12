@@ -1,0 +1,120 @@
+{% extends "manager/decoupe.html.twig" %}
+
+{%  block title %}Corlay manager - Lubrifiants{%  endblock %}
+
+{% block active_menu_lubrifiants %}active bg-gradient-primary{% endblock %}
+
+{% block content %}
+    <!-- Navbar -->
+    <nav class="navbar navbar-main navbar-expand-lg px-0 mx-4 shadow-none border-radius-xl" id="navbarBlur" data-scroll="true">
+        <div class="container-fluid py-1 px-3">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+                    <li class="breadcrumb-item text-sm"><a class="opacity-5 text-dark" href="javascript:;">Pages</a></li>
+                    <li class="breadcrumb-item text-sm text-dark active" aria-current="page">Declinaisons</li>
+                </ol>
+                <h5 class="font-weight-bolder mb-0">Nouveau Lubrifiant</h5>
+            </nav>
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+
+                <ul class="navbar-nav  justify-content-end">
+                    <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                        <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                            <div class="sidenav-toggler-inner">
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                                <i class="sidenav-toggler-line"></i>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- end Navbar -->
+
+    <div class="container-fluid px-2" style="margin-top: 5em!important;">
+        <div class="card card-body mx-3 mx-md-4 mt-n6">
+            <div class="row">
+                <div class="row">
+                    <div class="col-12 mt-4">
+                        <div class="ps-3">
+                            <h4 class="mb-1">Enregistrer un Lubrifiant</h4>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-lg-8">
+                                <form action="{{ path('declin_save',{'id':cat.id}) }}" class="text-start" method="post" enctype="multipart/form-data">
+
+                                    <div class="input-group input-group-outline" style="padding-bottom: 10px;">
+                                        <label class="form-label">Nom</label>
+                                        <input type="text" name="nom" class="form-control">
+                                    </div>
+
+                                    <div class="input-group input-group-outline" style="padding-bottom: 10px;">
+                                        <label class="form-label">Grade</label>
+                                        <input type="text" name="grade" class="form-control">
+                                    </div>
+
+
+                                    <div class="input-group input-group-outline" style="padding-bottom: 10px;">
+                                        <label class="form-label">Performance</label>
+                                        <input type="text" name="performance" class="form-control">
+                                    </div>
+
+                                    <div class="input-group input-group-outline" style="padding-bottom: 10px;">
+                                        <label class="form-label">Emballage</label>
+                                        <input type="text" name="emballage" class="form-control">
+                                    </div>
+
+                                    <label class="form-label">Fiche Technique</label>
+                                    <div class="input-group input-group-outline" style="padding-bottom: 10px;">
+                                        <textarea name="technique" class="form-control">
+                                        </textarea>
+                                    </div>
+
+                                    <label class="form-label">Aperçu</label>
+                                    <div class="input-group input-group-outline">
+                                        <input type="file" name="image" onchange="previewPicture(this)" accept="image/png, image/jpeg" class="form-control">
+                                    </div>
+
+                                    <div class="text-center">
+                                        <button type="submit" name="save" class="btn bg-gradient-primary w-100 my-4 mb-2">
+                                            <i class="fa fa-save"></i> &nbsp;Enregistrer
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="col-lg-4">
+                                <h6>Aperçu du Lubrifiant</h6>
+                                <p>
+                                    <img src="#" id="image" alt="img-blur-shadow" class="img-fluid shadow border-radius-xl">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block addjs %}
+    <script type="text/javascript" >
+        // L'image img#image
+        var image = document.getElementById("image");
+
+        // La fonction previewPicture
+        var previewPicture  = function (e) {
+
+            // e.files contient un objet FileList
+            const [picture] = e.files
+
+            // "picture" est un objet File
+            if (picture) {
+                // On change l'URL de l'image
+                image.src = URL.createObjectURL(picture)
+            }
+        }
+    </script>
+{% endblock %}
